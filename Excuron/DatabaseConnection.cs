@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +9,11 @@ namespace Excuron
 {
     class DatabaseConnection
     {
-    /*
-    Contact for connection strings.
-    */
-        private static string server = "***";
+
+        private static string server = "160.153.162.130";
         private static string database = "ExcuronDB";
-        private static string uid = "***";
-        private static string password = "***";
+        private static string uid = "ExcuronAdmin";
+        private static string password = "CSharp16";
         private static string connectionString = "SERVER=" + server + ";PORT=3306;" + "USERNAME=" + uid + ";" + "PASSWORD=" + password + ";" + "DATABASE=" + database + ";";
         private static MySqlConnection connection = new MySqlConnection(connectionString);
         public static Boolean hasDatabaseConnection()
