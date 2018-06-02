@@ -10,11 +10,11 @@ namespace Excuron
     class DatabaseConnection
     {
 
-        private static string server = "160.153.162.130";
+        private static string server = "160.153.129.236";
         private static string database = "ExcuronDB";
         private static string uid = "ExcuronAdmin";
         private static string password = "CSharp16";
-        private static string connectionString = "SERVER=" + server + ";PORT=3306;" + "USERNAME=" + uid + ";" + "PASSWORD=" + password + ";" + "DATABASE=" + database + ";";
+        private static string connectionString = "SERVER=" + server + ";PORT=3306;" + "USERNAME=" + uid + ";" + "PASSWORD=" + password + ";" + "DATABASE=" + database + ";"+ "SslMode=none";
         private static MySqlConnection connection = new MySqlConnection(connectionString);
         public static Boolean hasDatabaseConnection()
         {
@@ -74,9 +74,9 @@ namespace Excuron
             {
                 connection.Open();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                System.Console.WriteLine(e);
                 return "Connection failed";
             }
             connection.Close();
